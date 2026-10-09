@@ -57,29 +57,61 @@ body {
   position: relative;
   margin: 0;
   min-height: 100vh;
+  /* near-white base with a whisper of ambient light */
   background:
-    radial-gradient(900px 420px at 6% -10%, rgb(124 92 240 / 0.1), transparent 70%),
-    radial-gradient(760px 380px at 96% -6%, rgb(59 130 246 / 0.1), transparent 70%),
-    radial-gradient(700px 420px at 100% 100%, rgb(16 185 129 / 0.07), transparent 70%), var(--bg);
+    radial-gradient(60vw 40vh at 50% -12%, rgb(224 231 255 / 0.55), transparent 70%),
+    radial-gradient(50vw 40vh at 50% 112%, rgb(224 242 254 / 0.5), transparent 70%), #fbfcff;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--text);
   font: 14px/1.5 var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
-/* Faint dot grid, fading out from the top-right corner */
+/* Decorative background: flowing translucent shapes hugging the viewport edges */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    /* top-left: thin curved line */
+    radial-gradient(ellipse 25vw 34vh at -5vw 6vh, transparent 96%, rgb(129 140 248 / 0.4) 97.6%, transparent 99.2%),
+    /* top-left: lavender swoosh, layered for depth */
+    radial-gradient(ellipse 21vw 30vh at -6vw 15vh, rgb(167 139 250 / 0.2) 0 78%, transparent 84%),
+    radial-gradient(ellipse 30vw 42vh at -8vw 10vh, rgb(165 180 252 / 0.3), rgb(199 210 254 / 0.16) 60%, transparent 66%),
+    /* left-bottom: blue wave rising from the corner */
+    radial-gradient(ellipse 22vw 30vh at -7vw 96vh, rgb(96 165 250 / 0.2) 0 78%, transparent 84%),
+    radial-gradient(ellipse 34vw 44vh at -10vw 100vh, rgb(147 197 253 / 0.32), rgb(186 230 253 / 0.18) 60%, transparent 66%),
+    /* right-bottom: violet wave with a pale cyan crest */
+    radial-gradient(ellipse 22vw 26vh at 104vw 84vh, rgb(165 243 252 / 0.26) 0 78%, transparent 84%),
+    radial-gradient(ellipse 28vw 34vh at 108vw 100vh, rgb(139 92 246 / 0.18) 0 78%, transparent 84%),
+    radial-gradient(ellipse 40vw 46vh at 112vw 104vh, rgb(196 181 253 / 0.34), rgb(221 214 254 / 0.18) 60%, transparent 66%),
+    /* top-right: faint blue glow */
+    radial-gradient(ellipse 24vw 26vh at 104vw -4vh, rgb(147 197 253 / 0.26), transparent 70%);
+}
+/* Sparse dot accents, clustered near the edges */
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 420px;
-  height: 260px;
-  background-image: radial-gradient(rgb(99 102 241 / 0.22) 1.2px, transparent 1.4px);
-  background-size: 18px 18px;
-  mask-image: radial-gradient(ellipse at top right, #000 0%, transparent 70%);
-  pointer-events: none;
+  inset: 0;
   z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgb(99 102 241 / 0.3) 1.3px, transparent 1.6px);
+  background-size: 18px 18px;
+  mask-image:
+    radial-gradient(closest-side, #000 35%, transparent),
+    radial-gradient(closest-side, #000 35%, transparent),
+    radial-gradient(closest-side, #000 35%, transparent);
+  mask-size:
+    170px 150px,
+    200px 260px,
+    170px 170px;
+  mask-repeat: no-repeat;
+  mask-position:
+    right 1.5vw top 12vh,
+    left 1vw top 40vh,
+    left 3vw bottom 6vh;
 }
 h1,
 h2,
