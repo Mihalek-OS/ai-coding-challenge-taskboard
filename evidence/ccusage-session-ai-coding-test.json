@@ -1,0 +1,65 @@
+{
+  "_note": "Filtered output of `npx ccusage@latest claude session --json`. Only sessions whose projectPath is this project are kept; sessions and the global totals of other projects were removed. Costs are ccusage ESTIMATES at API list prices, not a bill.",
+  "capturedAt": "2026-10-09T12:05:44.888Z",
+  "command": "npx ccusage@latest claude session --json",
+  "sessions": [
+    {
+      "sessionId": "f380db55-e27d-4df0-afa3-c6c04df24e4e",
+      "projectPath": "c----GitHubRepos-ai-coding-test",
+      "firstActivity": "2026-10-09T11:35:27.393Z",
+      "lastActivity": "2026-10-09T11:58:11.678Z",
+      "modelsUsed": [
+        "claude-sonnet-5-5"
+      ],
+      "inputTokens": 68,
+      "outputTokens": 41393,
+      "cacheReadTokens": 2958159,
+      "cacheCreationTokens": 88951,
+      "totalTokens": 3088571,
+      "estimatedCostUSD": 1.0657,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 88951,
+          "cacheReadTokens": 2958159,
+          "cost": 1.0656858999999999,
+          "inputTokens": 68,
+          "modelName": "claude-sonnet-5-5",
+          "outputTokens": 41393
+        }
+      ]
+    },
+    {
+      "sessionId": "61944789-3055-4773-8448-180f3cadaab9",
+      "projectPath": "c----GitHubRepos-ai-coding-test",
+      "firstActivity": "2026-10-09T12:04:48.062Z",
+      "lastActivity": "2026-10-09T12:05:37.925Z",
+      "modelsUsed": [
+        "claude-sonnet-5-5"
+      ],
+      "inputTokens": 20,
+      "outputTokens": 5217,
+      "cacheReadTokens": 753195,
+      "cacheCreationTokens": 46876,
+      "totalTokens": 805308,
+      "estimatedCostUSD": 0.315,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 46876,
+          "cacheReadTokens": 753195,
+          "cost": 0.3150335,
+          "inputTokens": 20,
+          "modelName": "claude-sonnet-5-5",
+          "outputTokens": 5217
+        }
+      ]
+    }
+  ],
+  "projectSubtotal": {
+    "inputTokens": 88,
+    "outputTokens": 46610,
+    "cacheReadTokens": 3711354,
+    "cacheCreationTokens": 135827,
+    "totalTokens": 3893879,
+    "estimatedCostUSD": 1.3807
+  }
+}
